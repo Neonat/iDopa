@@ -6,6 +6,20 @@ import Button from "./components/Button";
 import Header from "./components/Header";
 
 function App() {
+  //Schedule
+  let items = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+  const handleSelectItem = (item: string) => {
+    console.log(item);
+  };
+  //Alerts and others
   const [alertVisible, setAlertVisibility] = useState(false);
   return (
     <div>
@@ -16,8 +30,20 @@ function App() {
             Submitted! Hold on tight until your schedule is out.
           </Alert>
         )}
+        <div>
+          <ListGroup
+            items={items}
+            heading="Week"
+            onSelectItem={handleSelectItem}
+          />
+        </div>
       </div>
-      <Button onClick={() => setAlertVisibility(true)}>Upload</Button>
+      <Button
+        style={{ marginTop: "20px" }}
+        onClick={() => setAlertVisibility(true)}
+      >
+        Upload
+      </Button>
     </div>
   );
 }
