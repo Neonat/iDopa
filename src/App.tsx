@@ -1,24 +1,17 @@
 import "/Users/natsim/iDopa/src/App.css";
 import ListGroup from "./components/ListGroup.tsx";
-import React from "react";
+import React, { useState } from "react";
+import Alert from "./components/Alert.tsx";
+import Button from "./components/Button";
 
 function App() {
-  // List of days
-  let items = [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday",
-  ];
-  const handleSelectItem = (item: string) => {
-    console.log(item);
-  };
+  const [alertVisible, setAlertVisibility] = useState(false);
   return (
     <div>
-      <ListGroup items={items} heading="Week" onSelectItem={handleSelectItem} />
+      {alertVisible && (
+        <Alert onClose={() => setAlertVisibility(false)}>My alert</Alert>
+      )}
+      <Button onClick={() => setAlertVisibility(true)}>My Button</Button>
     </div>
   );
 }
