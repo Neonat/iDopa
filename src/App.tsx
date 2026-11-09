@@ -1,4 +1,4 @@
-import "/Users/natsim/iDopa/src/App.css";
+import "./App.css";
 import ListGroup from "./components/ListGroup.tsx";
 import React, { useState } from "react";
 import Alert from "./components/Alert.tsx";
